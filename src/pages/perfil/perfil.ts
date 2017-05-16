@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CrudProvider } from "../../providers/crud/crud";
+import { Usuario } from "../../modelos/usuario.model";
 
 /**
  * Generated class for the PerfilPage page.
@@ -14,11 +16,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PerfilPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  pageTitle:string = "Perfil";
+  nombre:string;
+  id:number;
+  usuario:Usuario;
+
+  constructor(public navCtrl: NavController, public params: NavParams, crudProvider:CrudProvider) {
+    this.id = params.get("id");
+    this.usuario = new Usuario(crudProvider);
+    this.usuario.read(this.id).then((Usuario)=>{
+      this.usuario = Usuario;
+    });
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PerfilPage');
+    console.log(this.id);
+  }
+
+
+
+  goBack(){
+    this.navCtrl.popToRoot();
   }
 
 }
