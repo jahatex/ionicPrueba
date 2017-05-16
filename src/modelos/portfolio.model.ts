@@ -3,5 +3,5 @@ export class Portfolio {
     idU: number;
     name: string;
     descripcion: string;
-    imagen: any;
+    image: any;
 }
