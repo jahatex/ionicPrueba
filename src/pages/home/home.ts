@@ -9,7 +9,7 @@ import { PerfilPage } from "../perfil/perfil";
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  titulo:string = "Perfiles";
   usuario:Usuario;
   usuarios:Usuario[]=[];
   constructor(public navCtrl: NavController,crudProvider: CrudProvider ) {
