@@ -3,11 +3,19 @@
     <ion-title>
       {{titulo}}
     </ion-title>
+    <ion-buttons end>
+      <button
+        ion-button 
+        (click)="verPerfil(idUsuarioLogeado)"
+        color="secondary">
+        Ver Perfil
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let usuario of usuarios">
+  <ion-card *ngFor="let usuario of usuarios" (click)="verPerfil(usuario.id)">
     <ion-item>
         <ion-avatar item-left>
           <ion-icon name="md-contact"></ion-icon>
@@ -20,7 +28,7 @@
     <!--<img src="img/advance-card-bttf.png">-->
 
     <ion-card-content>
-      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+      <p>{{usuario.description}}</p>
     </ion-card-content>
 
     <!--<ion-row>
@@ -43,6 +51,11 @@
       </ion-col>
     </ion-row>-->
   </ion-card>
+  <button ion-button full 
+      color="primary" 
+      (click)="submit()">
+        Crear Nuevo Perfil
+  </button>
   <!--<input type="text" [(ngModel)]="usuario.name">
   <input type="button" (click)="save()" >-->
 </ion-content>

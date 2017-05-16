@@ -12,6 +12,7 @@ export class HomePage {
   titulo:string = "Perfiles";
   usuario:Usuario;
   usuarios:Usuario[]=[];
+  idUsuarioLogeado:number = 1;
   constructor(public navCtrl: NavController,crudProvider: CrudProvider ) {
     this.usuario = new Usuario(crudProvider);
     this.usuario.readAll().then((Usuarios)=>{
@@ -32,7 +33,8 @@ export class HomePage {
     });
   }
 
-  // verPerfil(){
-  //   this.navCtrl.push(PerfilPage,{id:this.usuario.id});
-  // }
+   verPerfil(id:number){
+     console.log(id);
+     //this.navCtrl.push(PerfilPage,{id:id});
+   }
 }
