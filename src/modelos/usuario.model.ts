@@ -1,22 +1,29 @@
 import { CRUD } from "../interfaces/crud.interface";
+import { CrudProvider } from "../providers/crud/crud";
 
 export class Usuario implements CRUD {
-    id: number;
-    name: string;
-    surname: string;
+    id: number = null;
+    name: string = null;
+    surname: string = null;
     imagen?: any;
-    location?: string;
+    location?: string;  
 
-    constructor(id,name,surname,imagen?,location?){
-        this.id = id;
-        this.name = name;
-        this.surname = surname;
-        this.imagen = (imagen!=undefined) ? imagen : null;
-        this.location = (location!=undefined) ? location : null;
+    constructor(public crudProvider: CrudProvider){
     }
 
-    create(){}
-    read(){}
+    create(){
+        let usuario = {
+           id: this.id,
+           name: this.name,
+           surname: this.surname,
+           imagen: this.imagen,
+           location: this.location
+        };
+        return this.crudProvider.create(usuario,'usuario');
+    }
+    read(){
+        return this.crudProvider.readAll('usuario');
+    }
     update(){}
     delete(){} 
 }
