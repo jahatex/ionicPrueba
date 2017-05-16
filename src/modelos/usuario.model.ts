@@ -5,6 +5,7 @@ export class Usuario implements CRUD {
     id: number = null;
     name: string = null;
     surname: string = null;
+    description?:string = null;
     imagen?: any;
     location?: string;  
 
@@ -16,6 +17,7 @@ export class Usuario implements CRUD {
            id: this.id,
            name: this.name,
            surname: this.surname,
+           description: this.description,
            imagen: this.imagen,
            location: this.location
         };
