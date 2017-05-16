@@ -8,11 +8,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CrudProvider } from "../providers/crud/crud";
+import { PerfilPage } from "../pages/perfil/perfil";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    PerfilPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { CrudProvider } from "../providers/crud/crud";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    PerfilPage
   ],
   providers: [
     StatusBar,
