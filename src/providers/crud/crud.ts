@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { Storage } from '@ionic/storage';
+import { Usuario } from "../../modelos/usuario.model";
 
 @Injectable()
 export class CrudProvider {
   
   fullData:any[];
+  usuario:Usuario;
 
   constructor(public storage:Storage) {
     //console.log('Hello TaskProvider Provider');
@@ -24,8 +26,14 @@ export class CrudProvider {
   }
 
   read(data:any,param:string){
-    // return this.storage.get(param);
+    return this.readAll(param).then((response) => {
+      return response ? response.filter((usuario:Usuario) => {
+        if (usuario.id === data) return usuario;
+      }) : [];
+    })
   }
+
+
 
   update(data:any,param:string){
     //creamos 

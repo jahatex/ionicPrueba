@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Usuario } from "../../modelos/usuario.model";
 import { CrudProvider } from "../../providers/crud/crud";
+import { PerfilPage } from "../perfil/perfil";
 
 @Component({
   selector: 'page-home',
@@ -13,7 +14,7 @@ export class HomePage {
   usuarios:Usuario[]=[];
   constructor(public navCtrl: NavController,crudProvider: CrudProvider ) {
     this.usuario = new Usuario(crudProvider);
-    this.usuario.read().then((Usuarios)=>{
+    this.usuario.readAll().then((Usuarios)=>{
       this.usuarios = Usuarios;
     });
   }
@@ -31,5 +32,7 @@ export class HomePage {
     });
   }
 
-
+  // verPerfil(){
+  //   this.navCtrl.push(PerfilPage,{id:this.usuario.id});
+  // }
 }

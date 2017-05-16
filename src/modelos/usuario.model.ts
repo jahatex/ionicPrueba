@@ -21,8 +21,11 @@ export class Usuario implements CRUD {
         };
         return this.crudProvider.create(usuario,'usuario');
     }
-    read(){
+    readAll(){
         return this.crudProvider.readAll('usuario');
+    }
+    read(id:number){
+        return this.crudProvider.read(id,'usuario');
     }
     update(){}
     delete(){} 

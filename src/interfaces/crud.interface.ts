@@ -1,6 +1,6 @@
 export interface CRUD {
     create(): any;
-    read(): any;
+    read(id:number): any;
     update(): any;
     delete(): any;  
 }
