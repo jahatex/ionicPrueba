@@ -33,8 +33,6 @@ export class CrudProvider {
     })
   }
 
-
-
   update(data:any,param:string){
     //creamos 
   }

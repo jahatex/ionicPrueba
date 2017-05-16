@@ -16,8 +16,7 @@ import { Usuario } from "../../modelos/usuario.model";
 })
 export class PerfilPage {
 
-  pageTitle:string = "Perfil";
-  nombre:string;
+  pageTitle:string = "Perfil de ";
   id:number;
   usuario:Usuario;
 
@@ -30,10 +29,9 @@ export class PerfilPage {
   }
 
   ionViewDidLoad() {
+    this.pageTitle = this.pageTitle + this.usuario.name;
     console.log(this.id);
   }
-
-
 
   goBack(){
     this.navCtrl.popToRoot();

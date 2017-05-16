@@ -7,12 +7,25 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>perfil</ion-title>
+    <ion-title>{{pageTitle}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-card>
+    <ion-item class="item-profile">
+      <div class="item-avatar">
+        <img ng-src="{{usuario.imagen}}">
+      </div>
+    </ion-item>
+    <ion-item>
+      <h3>{{usuario.name}} {{usuario.surname}}</h3>
+    </ion-item>
+    <ion-item>
+      <h3>{{usuario.description}}</h3>
+    </ion-item>
+  </ion-card>
 
 </ion-content>
