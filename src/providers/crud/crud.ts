@@ -3,12 +3,12 @@ import 'rxjs/add/operator/map';
 import { Storage } from '@ionic/storage';
 
 @Injectable()
-export class Crud {
+export class CrudProvider {
   
   fullData:any[];
 
   constructor(public storage:Storage) {
-    console.log('Hello TaskProvider Provider');
+    //console.log('Hello TaskProvider Provider');
   }
 
   create(data:any,param:string){
