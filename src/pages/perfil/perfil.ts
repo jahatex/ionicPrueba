@@ -9,7 +9,7 @@ import { Usuario } from "../../modelos/usuario.model";
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
+
 @Component({
   selector: 'page-perfil',
   templateUrl: 'perfil.html'
