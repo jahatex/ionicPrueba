@@ -22,6 +22,7 @@ export class PerfilPage {
 
   constructor(public navCtrl: NavController, public params: NavParams, crudProvider:CrudProvider) {
     this.id = params.get("id");
+    console.log("constructor "+this.id);
     this.usuario = new Usuario(crudProvider);
     this.usuario.read(this.id).then((Usuario)=>{
       this.usuario = Usuario;
@@ -30,7 +31,7 @@ export class PerfilPage {
 
   ionViewDidLoad() {
     this.pageTitle = this.pageTitle + this.usuario.name;
-    console.log(this.id);
+    console.log("ionViewDidLoad "+this.id);
   }
 
   goBack(){
