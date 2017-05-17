@@ -12,7 +12,7 @@ import { Usuario } from "../../modelos/usuario.model";
 @IonicPage()
 @Component({
   selector: 'page-perfil',
-  templateUrl: 'perfil.html',
+  templateUrl: 'perfil.html'
 })
 export class PerfilPage {
 
