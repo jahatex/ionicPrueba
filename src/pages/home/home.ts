@@ -34,7 +34,7 @@ export class HomePage {
   }
 
    verPerfil(id:number){
-     console.log(id);
+     console.log("verPerfil "+id);
      this.navCtrl.push(PerfilPage,{id:id});
    }
 }
