@@ -35,6 +35,6 @@ export class HomePage {
 
    verPerfil(id:number){
      console.log(id);
-     //this.navCtrl.push(PerfilPage,{id:id});
+     this.navCtrl.push(PerfilPage,{id:id});
    }
 }

@@ -8,6 +8,11 @@
 
   <ion-navbar>
     <ion-title>{{pageTitle}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goBack()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -15,16 +20,19 @@
 
 <ion-content padding>
   <ion-card>
-    <ion-item class="item-profile">
-      <div class="item-avatar">
-        <img src="{{usuario.imagen}}">
-      </div>
+    <ion-item>
+      <ion-avatar>
+        <img src="https://cdn.theculturetrip.com/wp-content/uploads/2016/03/maxresdefault3.jpg">
+      </ion-avatar>
     </ion-item>
     <ion-item>
-      <h3>{{usuario.name}} {{usuario.surname}}</h3>
+      <h3>Kike Oliver</h3>
     </ion-item>
     <ion-item>
-      <h3>{{usuario.description}}</h3>
+      <p>Una descripcion del usuario</p>
+    </ion-item>
+    <ion-item>
+      <p>Location</p>
     </ion-item>
   </ion-card>
 
